@@ -1,3 +1,5 @@
+package br.com.fiap.main;
+
 import java.util.List;
 
 import com.pengrad.telegrambot.TelegramBot;
@@ -10,10 +12,14 @@ import com.pengrad.telegrambot.response.BaseResponse;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.pengrad.telegrambot.response.SendResponse;
 
+import br.com.fiap.util.ProcessMessage;
+import br.com.fiap.util.Messages;
+
 public class Main {
 
 	public static void main(String[] args) {
 
+		String responseMessage = "";
 		// Creation of bot object with access information
 		TelegramBot bot = new TelegramBot("1390320756:AAGuJobr7aVYWnMIuVQQCundvxq6jJdtsQ8");
 
@@ -55,13 +61,25 @@ public class Main {
 				System.out.println("Chat Action response sent? " + baseResponse.isOk());
 
 				// sending the reply message
-				sendResponse = bot.execute(new SendMessage(update.message().chat().id(), "Não entendi..."));
+				if (update.message().text().equals("/start")) {
+					responseMessage = "Olá, sou assistente virtual para compra de ingressos de cinema da CineGo!";
+					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));
+					System.out.println("Chat Message response sent? " + sendResponse.isOk());
 
-				// verification of successfully sent message
-				System.out.println("Chat Message response sent? " + sendResponse.isOk());
+					baseResponse = bot
+							.execute(new SendChatAction(update.message().chat().id(), ChatAction.typing.name()));
+					System.out.println("Chat Action response sent? " + baseResponse.isOk());
+
+					responseMessage = Messages.T1.getText();
+					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));
+					System.out.println("Chat Message response sent? " + sendResponse.isOk());
+				} else {
+					responseMessage = ProcessMessage.getMessage(responseMessage, update.message().text());
+					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));
+					System.out.println("Chat Message response sent? " + sendResponse.isOk());
+				}
 			}
 		}
 
 	}
-
 }
