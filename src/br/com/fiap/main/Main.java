@@ -12,14 +12,15 @@ import com.pengrad.telegrambot.response.BaseResponse;
 import com.pengrad.telegrambot.response.GetUpdatesResponse;
 import com.pengrad.telegrambot.response.SendResponse;
 
-import br.com.fiap.util.ProcessMessage;
 import br.com.fiap.util.Messages;
+import br.com.fiap.util.ProcessMessage;
 
 public class Main {
 
 	public static void main(String[] args) {
 
 		String responseMessage = "";
+
 		// Creation of bot object with access information
 		TelegramBot bot = new TelegramBot("1390320756:AAGuJobr7aVYWnMIuVQQCundvxq6jJdtsQ8");
 
@@ -31,6 +32,8 @@ public class Main {
 
 		// object responsible for managing the sending of chat actions
 		BaseResponse baseResponse;
+
+		ProcessMessage pMessage = new ProcessMessage();
 
 		// off-set control, that is, from this ID the pending messages in the queue will
 		// be read
@@ -62,7 +65,7 @@ public class Main {
 
 				// sending the reply message
 				if (update.message().text().equals("/start")) {
-					responseMessage = "Olá, sou assistente virtual para compra de ingressos de cinema da CineGo!";
+					responseMessage = "Ola, sou assistente virtual para compra de ingressos de cinema da CineGo!";
 					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));
 					System.out.println("Chat Message response sent? " + sendResponse.isOk());
 
@@ -74,8 +77,16 @@ public class Main {
 					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));
 					System.out.println("Chat Message response sent? " + sendResponse.isOk());
 				} else {
-					responseMessage = ProcessMessage.getMessage(responseMessage, update.message().text());
-					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));
+					String responseAux = pMessage.getMessage(responseMessage, update.message().text());
+
+					if (responseAux.contains(Messages.T0.getText())) {
+						sendResponse = bot
+								.execute(new SendMessage(update.message().chat().id(), Messages.T0.getText()));
+					} else {
+						sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseAux));
+						responseMessage = responseAux;
+					}
+
 					System.out.println("Chat Message response sent? " + sendResponse.isOk());
 				}
 			}
