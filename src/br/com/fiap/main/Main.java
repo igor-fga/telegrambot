@@ -22,7 +22,7 @@ public class Main {
 		String responseMessage = "";
 
 		// Creation of bot object with access information
-		TelegramBot bot = new TelegramBot("1390320756:AAGuJobr7aVYWnMIuVQQCundvxq6jJdtsQ8");
+		TelegramBot bot = new TelegramBot("1386512793:AAHFSzwVUe_CU9vPLXSYX-KZ3Dw-B2Yxnxk");
 
 		// object responsible for receiving messages
 		GetUpdatesResponse updatesResponse;
