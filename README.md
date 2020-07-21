@@ -8,3 +8,7 @@
     1- Para executar o projeto é necessário ter instalado Java SE Development Kit.
  
     2- Utilizar uma IDE para execução.
+
+ - Dados do Bot
+
+ ![Dados Bot](img/bot_info.png)
