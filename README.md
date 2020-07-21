@@ -1,6 +1,6 @@
 # Projeto chatbot no telegram com Java e Botfather
 
-Colocar uma IMAGEM!
+![Imagem telegram chatbot](img/botfather.png)
 
 ##  Pré-requisitos para execução do Bot
  - Tecnologias necessárias.
