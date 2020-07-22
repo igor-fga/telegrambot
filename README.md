@@ -35,3 +35,20 @@ Como todas as requisições serão feitas por uma conexão HTTP, é necessário 
 
 
 ![Criacao de novo bot](img/create_newbot.png)
+
+---
+### Comunicação com a API
+
+Para comunicação com a API criamos um objeto com o token da API HTTP do BotFather da etapa anterior. 
+```
+TelegramBot bot = new TelegramBot("TOKEN");
+```
+Para enviar notificações, simplesmente chamamos  `bot.execute(new SendMessage(update.message().chat().id(), responseMessage))`, passando a mensagem.
+
+---
+
+## Telegram Documentação oficial
+
+[https://core.telegram.org/bots](https://core.telegram.org/bots)
+  	
+[https://core.telegram.org/bots/api](https://core.telegram.org/bots/api)
