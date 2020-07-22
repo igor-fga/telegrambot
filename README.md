@@ -11,15 +11,13 @@
 
  - Dados do Bot
    
-   ![Dados Bot](img/bot_info.png)
-   
+   ![Dados Bot](img/bot_info.png)   
+---
 
 ## Instalação e execução do projeto
 
 
 `$ git clone https://github.com/igor-fga/telegrambot.git`
-
-
 
 No diretório `src` no pacote `br.com.fiap.main` existe um arquivo chamado `Main.java` . 
 Abra esse arquivo e execute `Run`
