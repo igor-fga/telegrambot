@@ -111,7 +111,7 @@ public class ProcessMessage {
 			break;
 		default:
 			message = Messages.T0.getText()
-					+ "\nEscolha uma opÃ§Ã£o valida para o filme desejado, por exemplo caso (1), digite 1!";
+					+ "\nEscolha uma opção valida para o filme desejado, por exemplo caso (1), digite 1!";
 		}
 
 		return message;
