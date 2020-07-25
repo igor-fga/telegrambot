@@ -12,7 +12,7 @@ public enum Messages {
 	*/
 	T0("N縊 entendi..."),
 	/** 
-	* Mensagem: Posso ajudar na compra de ingressos? \n\n (1) SIM \n (2) Nﾃグ
+	* Mensagem: Posso ajudar na compra de ingressos? \n\n (1) SIM \n (2) NﾃO
 	*/
 	T1("Posso ajudar na compra de ingressos? \n\n (1) SIM \n (2) NﾃO"),
 	/** 
@@ -26,13 +26,13 @@ public enum Messages {
 	T3("{x} ﾉ uma otima escolha! Qual das op鋏es de hor疵ios abaixo para hoje deseja comprar?"
 			+ "\n\n (1) 15:30 \n (2) 17:20 \n (3) 21:40"),
 	/** 
-	* Mensagem: Posso confirmar a reserva para {x}? \n\n (1) SIM \n (2) Nﾃグ
+	* Mensagem: Posso confirmar a reserva para {x}? \n\n (1) SIM \n (2) NﾃO
 	*/
-	T4("Posso confirmar a reserva para {x}? \n\n (1) SIM \n (2) Nﾃグ"),
+	T4("Posso confirmar a reserva para {x}? \n\n (1) SIM \n (2) NﾃO"),
 	/** 
-	* Mensagem: Reserva confirmada! Ajudo com mais alguma coisa? \n\n (1) SIM \n (2) Nﾃグ
+	* Mensagem: Reserva confirmada! Ajudo com mais alguma coisa? \n\n (1) SIM \n (2) NﾃO
 	*/
-	T5("Reserva confirmada! Ajudo com mais alguma coisa? \n\n (1) SIM \n (2) Nﾃグ");
+	T5("Reserva confirmada! Ajudo com mais alguma coisa? \n\n (1) SIM \n (2) NﾃO");
 
 	private String text;
 

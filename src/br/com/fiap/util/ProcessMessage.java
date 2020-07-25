@@ -38,7 +38,7 @@ public class ProcessMessage {
 	}
 
 	private String T5(String userMessage) {
-		ArrayList<String> possibleAnswer = new ArrayList<String>(Arrays.asList("SIM", "N√ÉO", "NAO", "1", "2"));
+		ArrayList<String> possibleAnswer = new ArrayList<String>(Arrays.asList("SIM", "N√O", "NAO", "1", "2"));
 
 		if (possibleAnswer.contains(userMessage.toUpperCase())) {
 			if (userMessage.toUpperCase().equals("SIM") || userMessage.equals("1")) {
@@ -53,7 +53,7 @@ public class ProcessMessage {
 
 	private String T4(String userMessage) {
 
-		ArrayList<String> possibleAnswer = new ArrayList<String>(Arrays.asList("SIM", "N√ÉO", "NAO", "1", "2"));
+		ArrayList<String> possibleAnswer = new ArrayList<String>(Arrays.asList("SIM", "N√O", "NAO", "1", "2"));
 
 		if (possibleAnswer.contains(userMessage.toUpperCase())) {
 			if (userMessage.toUpperCase().equals("SIM") || userMessage.equals("1")) {
@@ -83,7 +83,7 @@ public class ProcessMessage {
 			message = Messages.T4.getText().replace("{x}", ans.getNameMovie() + " - " + ans.getMovieTime());
 			break;
 		default:
-			message = Messages.T0.getText() + "\nEscolha uma op√ß√£o valida de hor√°rio, por exemplo caso (1), digite 1!";
+			message = Messages.T0.getText() + "\nEscolha uma opÁ„o valida de hor·rio, por exemplo caso (1), digite 1!";
 		}
 
 		return message;
@@ -106,7 +106,7 @@ public class ProcessMessage {
 			message = Messages.T3.getText().replace("{x}", ans.getNameMovie());
 			break;
 		case "4":
-			ans.setNameMovie("Bastardos Ingl√≥rios");
+			ans.setNameMovie("Bastardos InglÛrios");
 			message = Messages.T3.getText().replace("{x}", ans.getNameMovie());
 			break;
 		default:
@@ -120,7 +120,7 @@ public class ProcessMessage {
 
 	private String T1(String userMessage) {
 
-		ArrayList<String> possibleAnswer = new ArrayList<String>(Arrays.asList("SIM", "N√ÉO", "NAO", "1", "2"));
+		ArrayList<String> possibleAnswer = new ArrayList<String>(Arrays.asList("SIM", "N√O", "NAO", "1", "2"));
 
 		if (possibleAnswer.contains(userMessage.toUpperCase())) {
 			if (userMessage.toUpperCase().equals("SIM") || userMessage.equals("1")) {
