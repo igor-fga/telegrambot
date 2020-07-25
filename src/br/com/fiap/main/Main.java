@@ -89,7 +89,7 @@ public class Main {
 
 					if (responseAux.contains(Messages.T0.getText())) {
 						sendResponse = bot
-								.execute(new SendMessage(update.message().chat().id(), Messages.T0.getText()));
+								.execute(new SendMessage(update.message().chat().id(), responseAux));
 					} else {
 						sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseAux));
 						responseMessage = responseAux;
