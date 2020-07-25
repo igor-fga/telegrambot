@@ -15,13 +15,21 @@ import com.pengrad.telegrambot.response.SendResponse;
 import br.com.fiap.util.Messages;
 import br.com.fiap.util.ProcessMessage;
 
+/** 
+* Classe principal que carrega o funcionamento geral do robo do telegram.
+*/
 public class Main {
-
+	/** 
+	* Método que inicia funcionamento geral do robo do telegram.
+	* @version 1.0
+	* @param args argumentos de entrada
+	*/
+	
 	public static void main(String[] args) {
 
 		String responseMessage = "";
 
-		// Creation of bot object with access information
+		// Creation of bot object with access information 
 		TelegramBot bot = new TelegramBot("1386512793:AAHFSzwVUe_CU9vPLXSYX-KZ3Dw-B2Yxnxk");
 
 		// object responsible for receiving messages
@@ -63,7 +71,7 @@ public class Main {
 				// chat action verification was successfully sent
 				System.out.println("Chat Action response sent? " + baseResponse.isOk());
 
-				// sending the reply message
+				// sending the reply message	
 				if (update.message().text().equals("/start")) {
 					responseMessage = "Ola, sou assistente virtual para compra de ingressos de cinema da CineGo!";
 					sendResponse = bot.execute(new SendMessage(update.message().chat().id(), responseMessage));

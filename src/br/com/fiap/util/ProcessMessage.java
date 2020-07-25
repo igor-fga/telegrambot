@@ -3,10 +3,21 @@ package br.com.fiap.util;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/** 
+* Classe de Processamento de mensagens
+*/
+
 public class ProcessMessage {
 
+	
 	private Answers ans = new Answers();
 
+	/** 
+	* Método de leitura da mensagem
+	* @param botMessage recebe a mensagem do bot
+	* @param userMessage recebe a mensagem do usuario
+	* @return a mensagem que deve ser enviada pelo bot com base na mensagem do usuário
+	*/
 	public String getMessage(String botMessage, String userMessage) {
 		String message = Messages.T0.getText();
 
